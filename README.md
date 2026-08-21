@@ -31,4 +31,4 @@ https://github.com/j945935cy/python-coding-agent-book
 
 ## 目前限制
 
-尚未建立完整 Python 原型、章節正文、付費模型 Adapter 或出版輸出。
+目前已建立第一版可執行 Python 技術原型與測試；尚未完成章節正文、完整 V0～V10 範例、付費模型 Adapter 或出版輸出。
