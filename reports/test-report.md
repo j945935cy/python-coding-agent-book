@@ -9,8 +9,9 @@
 
 ## 結果
 
-- pytest：23 passed
+- pytest：25 passed
 - compileall：passed
+- 完整範例輸出稽核：V1～V4 全部 `ok`、returncode=0
 - Python 程式碼區塊稽核：14 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
 - 範例執行：`計算結果是 5。`
@@ -49,6 +50,9 @@
 - `src/mini_agent/code_audit.py`
 - `scripts/audit_code_blocks.py`
 - `tests/test_code_audit.py`
+- `src/mini_agent/example_audit.py`
+- `scripts/verify_examples.py`
+- `tests/test_example_audit.py`
 
 ## 已知限制
 

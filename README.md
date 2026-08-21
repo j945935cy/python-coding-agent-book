@@ -14,6 +14,7 @@ uv run python examples/v03_agent_file_loop.py
 uv run python examples/v04_events_parallel_cancel.py
 uv run python scripts/audit_chapters.py .
 uv run python scripts/audit_code_blocks.py .
+uv run python scripts/verify_examples.py .
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
