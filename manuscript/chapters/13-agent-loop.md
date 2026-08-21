@@ -17,6 +17,20 @@
 
 `run_agent_loop()` 保持這個流程可讀，工具的具體行為則由 Registry 注入。這樣測試可以用 `FakeModel` 控制模型行為，而不必模擬網路。
 
+以下簡化版本只呈現一個回合，讓讀者先看清楚資料如何從模型流向工具，再閱讀完整 Loop：
+
+```python
+async def run_one_turn(model, context, tools):
+    assistant = await model.complete(context)
+    context.add(assistant)
+    for call in assistant.tool_calls:
+        result = await tools.execute(call.id, call.name, call.arguments)
+        context.add(result)
+    return assistant
+```
+
+這段程式還沒有最大回合數、截斷檢查、事件與取消，因此不能直接取代正式實作。它的用途是降低第一次閱讀完整控制流程時的負擔。
+
 ## 兩個重要停止條件
 
 第一是正常完成：assistant 沒有 tool calls。第二是保護性停止：模型輸出被截斷、收到取消訊號，或超過 `max_turns`。任何一條都應有測試，因為「停止」本身就是 Agent 的功能。

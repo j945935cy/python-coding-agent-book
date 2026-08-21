@@ -10,6 +10,20 @@
 
 即使工具完成順序不同，結果仍按照模型原本的 tool call 順序放回 Context。這個細節讓模型看到穩定的配對順序，也讓測試不依賴作業系統排程。
 
+```python
+import asyncio
+
+
+async def execute_parallel(calls, registry):
+    tasks = [
+        registry.execute(call.id, call.name, call.arguments)
+        for call in calls
+    ]
+    return await asyncio.gather(*tasks)
+```
+
+`gather()` 的回傳順序與傳入 awaitable 的順序一致，不是依完成時間排列。這是本章測試應固定的契約。
+
 ## 不能平行的情況
 
 若第二個工具依賴第一個工具剛寫入的檔案，就不應平行。Write 與 Edit 對同一檔案也可能產生競態。執行模式是設計選擇，不是永遠越快越好。

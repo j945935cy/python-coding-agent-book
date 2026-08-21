@@ -42,8 +42,13 @@ class ModelClient(Protocol):
 
 ## 練習
 
-請新增一個 `list_files` 工具，限制只能列出 Workspace 內的相對路徑，並以測試證明它不能走出 Workspace。
+1. 基礎：執行 V1～V4，記錄每個版本新增的能力與安全邊界。
+2. 進階：新增 `list_files` 工具，限制只能列出 Workspace 內的相對路徑，並以測試證明它不能走出 Workspace。
+3. 挑戰：建立新的 `ModelClient` Adapter；使用 `FakeModel` 完成核心測試，不把供應商 SDK 引入 Agent Loop。
 
 ## 本章驗收
 
-能從公開 Repository 安裝並執行 V1 範例，能閱讀測試理解 Agent Loop，並能在不改動核心 Loop 的前提下替換 ModelClient。
+- 能從公開 Repository 安裝並執行 V1～V4。
+- 能閱讀測試並畫出 Agent Loop 的狀態轉換。
+- 能在不改動核心 Loop 的前提下替換 `ModelClient`。
+- 新工具具備正常、錯誤、路徑越界與逾時測試。
