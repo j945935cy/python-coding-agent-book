@@ -13,8 +13,12 @@
 | 14 | `manuscript/chapters/14-events-and-streaming.md` | 教學初稿 | 事件收尾測試 |
 | 15 | `manuscript/chapters/15-parallel-tools.md` | 教學初稿 | 平行工具測試 |
 | 16 | `manuscript/chapters/16-cancellation-errors-recovery.md` | 教學初稿 | 取消測試 |
+| 9 | `manuscript/chapters/09-read-tool.md` | 工具章初稿 | `tests/test_safety.py`、`tests/test_tools.py` |
+| 10 | `manuscript/chapters/10-write-tool.md` | 工具章初稿 | `tests/test_tools.py` |
+| 11 | `manuscript/chapters/11-edit-tool.md` | 工具章初稿 | `tests/test_tools.py` |
+| 12 | `manuscript/chapters/12-bash-tool.md` | 工具章初稿 | `tests/test_bash_tool.py` |
 
-本批在六章樣章之外，補上第 14～16 章的教學初稿，並加入 `examples/v02_workspace_tools.py`。目前共有 9 個章節 Markdown 檔案，其中六章為主要樣章、三章為後續主題的教學初稿。
+本批在六章樣章之外，補上第 9～12、14～16 章的教學初稿，並加入 `examples/v02_workspace_tools.py` 與 `examples/v03_agent_file_loop.py`。目前共有 13 個章節 Markdown 檔案，其中六章為主要樣章、七章為後續主題的教學初稿。
 
 ## 下一輪樣章審查
 

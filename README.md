@@ -10,6 +10,7 @@
 uv run --with pytest --with pytest-asyncio pytest -q
 uv run python examples/v01_fake_model_loop.py
 uv run python examples/v02_workspace_tools.py
+uv run python examples/v03_agent_file_loop.py
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
