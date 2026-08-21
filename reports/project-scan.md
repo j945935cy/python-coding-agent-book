@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-先建立階段 2 的最小技術原型：訊息、Context、Config、事件、工具 Protocol、FakeModel 與基本 Agent Loop；完成後執行 pytest，再決定是否進入六章樣章。
+階段 2 原型已完成第一版，測試報告位於 `reports/test-report.md`。下一步先補完整取消／事件收尾測試，再進入階段 3 的六章樣章：第 1、3、6、8、13、18 章。

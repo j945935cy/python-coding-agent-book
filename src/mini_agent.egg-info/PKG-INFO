@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: mini-agent
+Version: 0.1.0
+Summary: A small, testable Python coding agent for the accompanying book
+Requires-Python: >=3.11
+Provides-Extra: test
+Requires-Dist: pytest>=8; extra == "test"
+Requires-Dist: pytest-asyncio>=0.23; extra == "test"

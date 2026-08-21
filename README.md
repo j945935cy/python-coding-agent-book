@@ -2,11 +2,16 @@
 
 本專案將以繁體中文逐步製作《用 Python 自己寫一個 Coding Agent：從對話迴圈、工具呼叫到可擴充的 AI 程式助手》及其可執行範例。
 
-目前處於：階段 1「專案掃描與技術設計」。
+目前處於：階段 2「可執行技術原型」。
 
-## 讀者下載資源
+## 執行技術原型
 
-成書後的完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
+```bash
+uv run --with pytest --with pytest-asyncio pytest -q
+uv run python examples/v01_fake_model_loop.py
+```
+
+完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
 
 https://github.com/j945935cy/python-coding-agent-book
 
