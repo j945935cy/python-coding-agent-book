@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-下一步進行全目錄逐章 API 核對與教學深化，再進入出版前稽核。章節結構、Python 語法、V0～V10 輸出、API 名稱、術語與學習段落稽核已完成；第一輪難度曲線及重點章節補強已完成。下一批建立統一驗證命令、版本對照表與出版前檢查清單。
+下一步進入出版前稽核與全書內容編輯。單一驗證入口 `scripts/verify_all.py`、V0～V10 能力對照 `reports/version-matrix.md` 與出版前清單 `reports/prepublication-checklist.md` 已建立；下一批依清單擴寫正文與規劃圖解。

@@ -25,6 +25,7 @@ uv run python scripts/verify_examples.py .
 uv run python scripts/audit_api_references.py .
 uv run python scripts/audit_style.py .
 uv run python scripts/audit_learning_sections.py .
+uv run python scripts/verify_all.py .
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
@@ -47,4 +48,4 @@ https://github.com/j945935cy/python-coding-agent-book
 
 ## 目前限制
 
-目前已建立第一版可執行 Python 技術原型、31 項測試、18 章初稿與完整 V0～V10 範例；尚未完成付費模型 Adapter 或出版輸出。
+目前已建立第一版可執行 Python 技術原型、33 項測試、18 章初稿與完整 V0～V10 範例；尚未完成付費模型 Adapter 或出版輸出。

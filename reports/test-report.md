@@ -9,7 +9,8 @@
 
 ## 結果
 
-- pytest：31 passed
+- 單一驗證入口：8 checks 全部 `PASS`、`valid=True`
+- pytest：33 passed
 - compileall：passed
 - 學習段落稽核：18 章都有非空「練習」與「本章驗收」
 - 術語稽核：0 violations，符合繁體中文與台灣用語規範
@@ -65,6 +66,9 @@
 - `src/mini_agent/learning_audit.py`
 - `scripts/audit_learning_sections.py`
 - `tests/test_learning_audit.py`
+- `src/mini_agent/verification.py`
+- `scripts/verify_all.py`
+- `tests/test_verification.py`
 
 ## 已知限制
 
