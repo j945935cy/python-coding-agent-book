@@ -9,10 +9,11 @@
 `WriteTool` 接收相對路徑與文字內容，先通過 Workspace 邊界，再建立父目錄，最後以 UTF-8 寫入。
 
 ```python
-await write.execute(
-    "call-1",
-    {"path": "src/hello.py", "content": "print('hello')\n"},
-)
+async def demo(write):
+    await write.execute(
+        "call-1",
+        {"path": "src/hello.py", "content": "print('hello')\n"},
+    )
 ```
 
 工具結果回傳相對路徑與 bytes 數，讓模型與使用者知道實際寫入了什麼。不要把完整檔案內容重複塞回 Context，否則大型檔案會迅速增加成本。

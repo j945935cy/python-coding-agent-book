@@ -9,8 +9,9 @@
 `ReadTool` 不負責理解 Python，也不負責決定模型下一步。它只做三件事：接收相對路徑、把路徑交給 Workspace 安全層、以 UTF-8 讀取文字。
 
 ```python
-read = ReadTool(workspace)
-content = await read.execute("call-1", {"path": "src/main.py"})
+async def demo(read, workspace):
+    content = await read.execute("call-1", {"path": "src/main.py"})
+    return content
 ```
 
 路徑安全集中在 `ensure_workspace_path()`。所有檔案工具共用同一個邊界，避免每個工具各自實作一份容易不一致的檢查。

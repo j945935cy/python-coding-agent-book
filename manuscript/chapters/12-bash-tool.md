@@ -15,7 +15,9 @@
 - 回傳 return code、stdout、stderr
 
 ```python
-result = await bash.execute("call-1", {"command": "pwd"})
+async def demo(bash):
+    result = await bash.execute("call-1", {"command": "pwd"})
+    return result
 ```
 
 這不是完整的沙箱，也不是宣稱 Bash 已經安全。它是教學用的最小風險邊界，提醒讀者：黑名單很容易漏掉，真正產品應考慮容器、作業系統權限與 approval。

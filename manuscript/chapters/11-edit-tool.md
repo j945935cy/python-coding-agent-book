@@ -9,14 +9,15 @@
 `EditTool` 要求 `old` 文字在檔案中剛好出現一次。零次代表模型提供的上下文已過時，多次代表修改範圍不夠精確；兩者都應停止，而不是猜測要改哪一處。
 
 ```python
-await edit.execute(
-    "call-1",
-    {
-        "path": "src/hello.py",
-        "old": "print('hello')",
-        "new": "print('hello, agent')",
-    },
-)
+async def demo(edit):
+    await edit.execute(
+        "call-1",
+        {
+            "path": "src/hello.py",
+            "old": "print('hello')",
+            "new": "print('hello, agent')",
+        },
+    )
 ```
 
 結果回傳 `replacements: 1`。這個欄位是可觀察證據，測試也可以直接驗證。
