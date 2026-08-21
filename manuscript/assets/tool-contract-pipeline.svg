@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">工具契約與驗證管線</title>
+  <desc id="desc">模型產生的 ToolCall 先經過已知名稱、arguments object 與 call ID 驗證，再由 Safety Hook 決定是否允許，通過後由 ToolRegistry 分派到具體工具。具有有效 ID 的成功與可恢復錯誤可產生可配對的 ToolResultMessage；空 ID 只能留下不可配對的錯誤紀錄。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0 L0 6 L9 3z" fill="#334155"/>
+    </marker>
+    <marker id="error-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0 L0 6 L9 3z" fill="#be123c"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="620" fill="#ffffff"/>
+
+  <g fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M185 175 H245"/>
+    <path d="M435 175 H495"/>
+    <path d="M685 175 H745"/>
+    <path d="M925 175 H975"/>
+    <path d="M1015 220 C1015 310 930 355 865 385"/>
+  </g>
+  <g fill="none" stroke="#be123c" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#error-arrow)">
+    <path d="M340 220 V385"/>
+    <path d="M590 220 V385"/>
+    <path d="M840 220 V385"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="25" y="125" width="160" height="100" rx="12" fill="#eff6ff" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="105" y="160" font-size="20" font-weight="700" fill="#0f172a">ToolCall</text>
+    <text x="105" y="187" font-size="14" fill="#334155">id · name</text>
+    <text x="105" y="208" font-size="14" fill="#334155">arguments</text>
+
+    <rect x="245" y="105" width="190" height="140" rx="12" fill="#f8fafc" stroke="#475569" stroke-width="2.5"/>
+    <text x="340" y="137" font-size="19" font-weight="700" fill="#0f172a">Validation</text>
+    <text x="340" y="167" font-size="14" fill="#334155">已知工具名稱</text>
+    <text x="340" y="191" font-size="14" fill="#334155">arguments 是 object</text>
+    <text x="340" y="215" font-size="14" fill="#334155">call ID 非空</text>
+
+    <rect x="495" y="105" width="190" height="140" rx="12" fill="#fff1f2" stroke="#e11d48" stroke-width="2.5"/>
+    <text x="590" y="137" font-size="19" font-weight="700" fill="#0f172a">Safety Hook</text>
+    <text x="590" y="171" font-size="14" fill="#334155">同步或非同步政策</text>
+    <text x="590" y="195" font-size="14" fill="#334155">允許／拒絕本次呼叫</text>
+    <text x="590" y="219" font-size="13" fill="#9f1239">位於副作用之前</text>
+
+    <rect x="745" y="105" width="180" height="140" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="2.5"/>
+    <text x="835" y="137" font-size="19" font-weight="700" fill="#0f172a">ToolRegistry</text>
+    <text x="835" y="171" font-size="14" fill="#334155">依名稱查找</text>
+    <text x="835" y="195" font-size="14" fill="#334155">傳遞 ID 與參數</text>
+    <text x="835" y="219" font-size="14" fill="#334155">分派工具實例</text>
+
+    <rect x="975" y="125" width="100" height="100" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+    <text x="1025" y="162" font-size="18" font-weight="700" fill="#0f172a">Tool</text>
+    <text x="1025" y="187" font-size="13" fill="#334155">欄位驗證</text>
+    <text x="1025" y="208" font-size="13" fill="#334155">執行</text>
+
+    <rect x="720" y="385" width="290" height="125" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="865" y="421" font-size="20" font-weight="700" fill="#0f172a">ToolResultMessage</text>
+    <text x="865" y="452" font-size="14" fill="#334155">沿用原 ID；空 ID 不可配對</text>
+    <text x="865" y="478" font-size="14" fill="#334155">成功：is_error=False</text>
+    <text x="865" y="500" font-size="14" fill="#9f1239">可恢復錯誤：is_error=True</text>
+
+    <rect x="245" y="385" width="440" height="125" rx="14" fill="#fff1f2" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="7 5"/>
+    <text x="465" y="418" font-size="19" font-weight="700" fill="#9f1239">在最早可判斷的位置停止</text>
+    <text x="465" y="449" font-size="14" fill="#334155">Validation：結構錯誤／未知工具</text>
+    <text x="465" y="475" font-size="14" fill="#334155">Safety Hook：政策拒絕</text>
+    <text x="465" y="501" font-size="14" fill="#334155">Tool：業務欄位錯誤／副作用邊界</text>
+
+    <text x="215" y="160" font-size="13" fill="#475569">不可信輸入</text>
+    <text x="465" y="160" font-size="13" fill="#475569">結構有效</text>
+    <text x="715" y="160" font-size="13" fill="#475569">允許</text>
+    <text x="950" y="160" font-size="13" fill="#475569">分派</text>
+    <text x="1015" y="330" font-size="13" fill="#475569">成功</text>
+
+    <text x="340" y="300" font-size="13" fill="#9f1239">驗證失敗</text>
+    <text x="590" y="300" font-size="13" fill="#9f1239">政策拒絕</text>
+    <text x="840" y="300" font-size="13" fill="#9f1239">查找／工具錯誤</text>
+
+    <rect x="25" y="550" width="1050" height="42" rx="9" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="550" y="577" font-size="14" fill="#334155">原則：先驗證，再授權，最後才執行；有效 ID 的結果才能可靠回到 Agent Context。</text>
+  </g>
+</svg>

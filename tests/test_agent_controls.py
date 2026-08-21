@@ -61,6 +61,37 @@ async def test_sync_safety_hook_can_block_tool():
 
 
 @pytest.mark.asyncio
+async def test_safety_hook_runs_before_tool_execution():
+    order = []
+
+    class Tool:
+        name = "work"
+        description = "record execution order"
+
+        async def execute(self, tool_call_id, arguments):
+            order.append("tool")
+            return "done"
+
+    def hook(_id, _name, _args):
+        order.append("hook")
+        return True
+
+    model = FakeModel([
+        AssistantMessage(content="", tool_calls=[ToolCall("x", "work", {})]),
+        AssistantMessage(content="done"),
+    ])
+    await run_agent_loop(
+        model,
+        AgentContext([UserMessage("go")]),
+        ToolRegistry([Tool()]),
+        AgentConfig(),
+        before_tool_call=hook,
+    )
+
+    assert order == ["hook", "tool"]
+
+
+@pytest.mark.asyncio
 async def test_agent_stops_at_max_turns():
     class Tool:
         name = "again"

@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-下一步進入出版前稽核與全書內容編輯。第 1～5 章完成第一輪擴寫，目前有 5 張 EPUB 可用 SVG；Context 生命週期與依賴注入圖解已驗證無 script。下一批擴寫第 6～8 章，補強 Calculator、Registry 與 Validation 的工具契約管線。
+第 1～8 章已完成第一輪擴寫，目前有 6 張 EPUB 可用 SVG；工具契約管線圖已完成 XML、可存取性屬性與 script 檢查。下一批擴寫第 9～12 章，統一 Workspace 邊界，補強 Read、Write、Edit 與 Bash 的副作用、失敗案例與驗收。

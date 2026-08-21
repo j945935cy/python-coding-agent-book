@@ -3,6 +3,8 @@
 | 等級 | 風險 | 控制措施 | 門檻 |
 |---|---|---|---|
 | 高 | 模型產生危險命令 | Bash 限制模式、白名單／攔截、before Hook | 負向測試通過 |
+| 高 | 模型產生未知工具或畸形 ToolCall | 通用 Validation、Registry 查找與具體工具欄位驗證 | 未知名稱、非 object arguments、空 ID 與型態負向測試通過 |
+| 中 | 空或純空白 ToolCall ID 的錯誤結果無法可靠配對 | Validation 阻止工具執行；正式 Adapter 在進入 Loop 前拒絕無效 ID | 不把無效 ID 錯誤結果宣稱為可配對，Adapter 納入時補整合測試 |
 | 高 | 路徑逃逸 Workspace | `Path.resolve()` 與祖先路徑檢查、符號連結測試 | 所有越界測試通過 |
 | 高 | 截斷工具參數被執行 | 先判斷 stop reason，再拒絕整批工具呼叫 | 專門測試通過 |
 | 高 | 無限 Agent Loop | `max_turns` 與明確錯誤結果 | 測試可終止 |

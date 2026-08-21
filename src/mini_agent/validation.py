@@ -14,5 +14,5 @@ def validate_tool_call(call: ToolCall, known_tools: set[str]) -> None:
         raise ToolValidationError(f"Unknown tool: {call.name}")
     if not isinstance(call.arguments, dict):
         raise ToolValidationError("Tool arguments must be an object")
-    if not call.id:
+    if not call.id.strip():
         raise ToolValidationError("Tool call id is required")

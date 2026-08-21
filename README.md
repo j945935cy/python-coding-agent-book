@@ -2,12 +2,12 @@
 
 本專案將以繁體中文逐步製作《用 Python 自己寫一個 Coding Agent：從對話迴圈、工具呼叫到可擴充的 AI 程式助手》及其可執行範例。
 
-目前處於：階段 3「六章樣章」。
+目前處於：階段 4「逐章擴寫」，第 1～8 章已完成第一輪出版篇幅擴寫。
 
 ## 執行技術原型
 
 ```bash
-uv run --with pytest --with pytest-asyncio pytest -q
+uv run --extra test pytest -q
 uv run python examples/v00_chatbot_baseline.py
 uv run python examples/v01_fake_model_loop.py
 uv run python examples/v02_workspace_tools.py
@@ -25,7 +25,7 @@ uv run python scripts/verify_examples.py .
 uv run python scripts/audit_api_references.py .
 uv run python scripts/audit_style.py .
 uv run python scripts/audit_learning_sections.py .
-uv run python scripts/verify_all.py .
+uv run --extra test python scripts/verify_all.py .
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
@@ -48,4 +48,4 @@ https://github.com/j945935cy/python-coding-agent-book
 
 ## 目前限制
 
-目前已建立第一版可執行 Python 技術原型、33 項測試、18 章初稿與完整 V0～V10 範例；尚未完成付費模型 Adapter 或出版輸出。
+目前已建立第一版可執行 Python 技術原型、40 項測試、18 章初稿與完整 V0～V10 範例；第 9～18 章仍待擴寫，且尚未完成真實模型 Adapter 或出版輸出。

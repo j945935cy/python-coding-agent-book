@@ -3,27 +3,45 @@
 ## 測試環境
 
 - Python 要求：3.11+
-- 實際執行：uv 管理的 Python 3.14.6
-- 測試命令：`uv run --with pytest --with pytest-asyncio pytest -q`
+- 實際執行：uv 管理的 Python 3.13.15
+- 測試命令：`uv run --extra test pytest -q`
+- 統一驗證：`uv run --extra test python scripts/verify_all.py .`
 - 語法命令：`uv run python -m compileall -q src tests`
 
 ## 結果
 
 - 單一驗證入口：8 checks 全部 `PASS`、`valid=True`
-- pytest：33 passed
+- pytest：40 passed
 - compileall：passed
 - 學習段落稽核：18 章都有非空「練習」與「本章驗收」
 - 術語稽核：0 violations，符合繁體中文與台灣用語規範
 - API 參考稽核：核心公開 API 全部存在、無失效符號
 - 完整範例輸出稽核：V0～V10 全部 `ok`、returncode=0
-- Python 程式碼區塊稽核：28 blocks、0 syntax errors
+- Python 程式碼區塊稽核：49 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
+- 書稿量化：18 個本章目標、18 個練習、18 個本章驗收；第 6～8 章新增 3 個本章小結
+- 章節 Markdown：共 1,893 行；第 6、7、8 章分別為 243、286、303 行
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`
 - V3 Agent＋Workspace 範例執行：檔案已建立、修改並讀回。
 - V4 事件／平行／取消範例執行：`9`、`events=tool_start,tool_end`
-- 六章樣章引用檢查：6 chapters checked; missing=[]
+- 章節引用檢查：18 chapters checked; missing=[]
 - 核心測試不需要 API Key
+
+## 第 6～8 章擴寫批次驗證
+
+- Calculator、Validation、Registry、Safety Hook 目標測試：14 passed
+- 目標測試命令：`uv run --extra test pytest tests/test_calculator.py tests/test_validation.py tests/test_tool_registry.py tests/test_agent_controls.py -q`
+- 新增 Calculator 非數值參數測試
+- 新增 Registry 重複名稱與未知工具分派測試
+- 新增 Registry 空名稱測試
+- 新增空 ToolCall ID 測試
+- 新增只有空白字元的 ToolCall ID 測試
+- 新增 Safety Hook 先於 Tool 執行的順序測試
+- 從第 6 章 Markdown 擷取並執行 Calculator 成功範例：`{'result': 42}`
+- 從第 7 章 Markdown 擷取並執行 PingTool／Registry 範例：工具清單、`pong` 與 Calculator 42 均符合預期
+- `tool-contract-pipeline.svg`：XML 可解析、具 `viewBox`、`title`、`desc`、`role="img"`、`aria-labelledby`，且不含 script
+- SVG 點陣預覽的元件、箭頭與行距無重疊；目前 WSL 缺少中文字型，中文字形仍須在 EPUB／閱讀器環境複驗
 
 ## 已完成
 
