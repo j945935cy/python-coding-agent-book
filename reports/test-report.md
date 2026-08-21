@@ -14,6 +14,7 @@
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`
 - V3 Agent＋Workspace 範例執行：檔案已建立、修改並讀回。
+- V4 事件／平行／取消範例執行：`9`、`events=tool_start,tool_end`
 - 六章樣章引用檢查：6 chapters checked; missing=[]
 - 核心測試不需要 API Key
 
