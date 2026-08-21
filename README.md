@@ -8,10 +8,17 @@
 
 ```bash
 uv run --with pytest --with pytest-asyncio pytest -q
+uv run python examples/v00_chatbot_baseline.py
 uv run python examples/v01_fake_model_loop.py
 uv run python examples/v02_workspace_tools.py
 uv run python examples/v03_agent_file_loop.py
 uv run python examples/v04_events_parallel_cancel.py
+uv run python examples/v05_error_recovery.py
+uv run python examples/v06_event_consumer.py
+uv run python examples/v07_parallel_order.py
+uv run python examples/v08_cooperative_cancel.py
+uv run python examples/v09_safety_policy.py
+uv run python examples/v10_complete_agent.py
 uv run python scripts/audit_chapters.py .
 uv run python scripts/audit_code_blocks.py .
 uv run python scripts/verify_examples.py .
@@ -40,4 +47,4 @@ https://github.com/j945935cy/python-coding-agent-book
 
 ## 目前限制
 
-目前已建立第一版可執行 Python 技術原型、18 項測試與六章樣章初稿；尚未完成完整 V0～V10 範例、付費模型 Adapter 或出版輸出。
+目前已建立第一版可執行 Python 技術原型、31 項測試、18 章初稿與完整 V0～V10 範例；尚未完成付費模型 Adapter 或出版輸出。

@@ -27,9 +27,9 @@ model response → tool_start(call-1) → tool executes → tool_end(call-1) →
 
 ```python
 def render_event(event):
-    if event.kind == "tool_start":
+    if event.type == "tool_start":
         return f"開始：{event.data['name']}"
-    if event.kind == "tool_end":
+    if event.type == "tool_end":
         return f"結束：{event.data['name']}"
     return None
 ```

@@ -23,7 +23,7 @@
 | 11 | `manuscript/chapters/11-edit-tool.md` | 工具章初稿 | `tests/test_tools.py` |
 | 12 | `manuscript/chapters/12-bash-tool.md` | 工具章初稿 | `tests/test_bash_tool.py` |
 
-本批補齊第 2、4、5、7、17 章，並加入 `examples/v04_events_parallel_cancel.py`。目前 18 個章節 Markdown 檔案皆已建立，另有 4 個可執行版本範例。第一輪難度曲線審查已完成，詳見 `reports/difficulty-review.md`；第 6、7、11、13、14、15、17、18 章已完成第一輪補強。
+本批補齊第 2、4、5、7、17 章。目前 18 個章節 Markdown 檔案皆已建立，另有 V0～V10 共 11 個可執行版本範例。第一輪難度曲線審查已完成，詳見 `reports/difficulty-review.md`；第 6、7、11、13、14、15、17、18 章已完成第一輪補強。
 
 ## 下一輪樣章審查
 
