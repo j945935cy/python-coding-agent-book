@@ -54,6 +54,10 @@ https://github.com/j945935cy/python-coding-agent-book
 17. 安全攔截、權限與 Context 管理
 18. 完成迷你 Python Coding Agent
 
+### 附錄
+
+- 練習解答與參考方向：`manuscript/appendices/exercise-solutions.md`
+
 ## 階段路線
 
 1. 專案掃描與技術設計

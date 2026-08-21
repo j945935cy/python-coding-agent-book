@@ -57,6 +57,13 @@
 
 ## 已完成
 
+### 練習解答附錄
+
+- `manuscript/appendices/exercise-solutions.md`：18 個章節段落、54 題解答。
+- 每題均包含解題方向、起始狀態、預期產物、驗證方法與常見錯誤。
+- 附錄共 489 行；不含機器特定絕對路徑，並保留 Bash、Workspace、事件、取消、Context 與 V10 的已知限制。
+- 結構稽核：章節編號 1～18 完整、每章 3 題、54 題均各有五個必要欄位；pytest node 共 11 次引用、6 個唯一節點，全部存在，繁體中文禁用詞 0。
+
 - 訊息資料類別與序列化
 - AgentContext 複製與 LLM payload 轉換
 - AgentConfig 最大回合數、逾時與工具執行模式
