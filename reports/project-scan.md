@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-下一步進入出版前稽核與全書內容編輯。單一驗證入口、版本對照與出版前清單已建立；第 1～3 章完成第一輪擴寫，並新增 3 張 EPUB 可用 SVG。全書圖解規劃位於 `reports/illustration-plan.md`，下一批擴寫第 4～5 章並製作 Context／依賴注入圖解。
+下一步進入出版前稽核與全書內容編輯。第 1～5 章完成第一輪擴寫，目前有 5 張 EPUB 可用 SVG；Context 生命週期與依賴注入圖解已驗證無 script。下一批擴寫第 6～8 章，補強 Calculator、Registry 與 Validation 的工具契約管線。

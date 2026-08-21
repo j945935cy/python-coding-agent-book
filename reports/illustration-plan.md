@@ -19,7 +19,7 @@
 | P0 | 1 | Agent 行動閉環 | 分辨聊天回答與工具回饋閉環 | 已完成：`manuscript/assets/agent-loop.svg` |
 | P0 | 2 | 七模組資料流 | 看懂責任、資料方向與攔截點 | 已完成：`manuscript/assets/seven-modules.svg` |
 | P0 | 3 | ToolCall／ToolResult 配對 | 解釋平行完成時為何必須使用 ID | 已完成：`manuscript/assets/message-pairing.svg` |
-| P1 | 4～5 | Context 生命週期與依賴注入 | 分辨狀態、設定、Hook 與物件依賴 | 待製作 |
+| P1 | 4～5 | Context 生命週期與依賴注入 | 分辨狀態、設定、Hook 與物件依賴 | 已完成：`context-lifecycle.svg`、`dependency-injection.svg` |
 | P1 | 6～8 | 工具契約與驗證管線 | 從具體 Calculator 過渡到 Registry、Validation | 待製作 |
 | P0 | 9～12 | Workspace 邊界與檔案狀態轉換 | 顯示 Read／Write／Edit／Bash 的副作用與路徑限制 | 待製作 |
 | P0 | 13 | Agent Loop 狀態機 | 呈現完成、工具、截斷、錯誤、最大回合分支 | 待製作 |

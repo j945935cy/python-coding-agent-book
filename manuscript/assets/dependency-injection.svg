@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 依賴注入</title>
+  <desc id="desc">呼叫端將測試組合或正式組合注入同一個 Agent Loop，測試使用 FakeModel 與測試工具，正式版使用模型 Adapter 與受限 Workspace 工具。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3z" fill="#334155"/></marker></defs>
+  <rect width="960" height="520" fill="#fff"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="350" y="35" width="260" height="70" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="480" y="65" font-size="20">呼叫端／組裝根</text><text x="480" y="88" font-size="13">建立並注入所有依賴</text>
+    <rect x="45" y="160" width="340" height="265" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/><text x="215" y="195" font-size="20">測試組合</text>
+    <rect x="575" y="160" width="340" height="265" rx="14" fill="#eff6ff" stroke="#0284c7" stroke-width="2"/><text x="745" y="195" font-size="20">正式組合</text>
+    <g font-size="16"><text x="215" y="235">FakeModel</text><text x="215" y="270">測試 Tool／暫存 Workspace</text><text x="215" y="305">短逾時 AgentConfig</text><text x="215" y="340">固定 Safety Hook</text><text x="215" y="375">記憶體 events list</text><text x="745" y="235">ModelClient Adapter</text><text x="745" y="270">受限 Workspace Tools</text><text x="745" y="305">環境 AgentConfig</text><text x="745" y="340">政策／核准 Hook</text><text x="745" y="375">CancellationToken／事件端</text></g>
+    <rect x="335" y="445" width="290" height="55" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/><text x="480" y="479" font-size="19">同一個 run_agent_loop()</text>
+  </g>
+  <g fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"><path d="M420 105 C350 125 290 135 250 160"/><path d="M540 105 C610 125 670 135 710 160"/><path d="M215 425 C280 455 310 465 335 470"/><path d="M745 425 C680 455 650 465 625 470"/></g>
+  <text x="480" y="135" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#475569">建立物件與使用物件分離</text>
+</svg>
