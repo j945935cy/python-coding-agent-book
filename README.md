@@ -17,6 +17,7 @@ uv run python scripts/audit_code_blocks.py .
 uv run python scripts/verify_examples.py .
 uv run python scripts/audit_api_references.py .
 uv run python scripts/audit_style.py .
+uv run python scripts/audit_learning_sections.py .
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
