@@ -9,8 +9,9 @@
 
 ## 結果
 
-- pytest：25 passed
+- pytest：27 passed
 - compileall：passed
+- API 參考稽核：核心公開 API 全部存在、無失效符號
 - 完整範例輸出稽核：V1～V4 全部 `ok`、returncode=0
 - Python 程式碼區塊稽核：14 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
@@ -53,6 +54,9 @@
 - `src/mini_agent/example_audit.py`
 - `scripts/verify_examples.py`
 - `tests/test_example_audit.py`
+- `src/mini_agent/api_audit.py`
+- `scripts/audit_api_references.py`
+- `tests/test_api_audit.py`
 
 ## 已知限制
 
