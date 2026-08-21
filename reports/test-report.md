@@ -12,6 +12,7 @@
 - pytest：18 passed
 - compileall：passed
 - 範例執行：`計算結果是 5。`
+- V2 Workspace 範例執行：`print('hello, agent')`
 - 六章樣章引用檢查：6 chapters checked; missing=[]
 - 核心測試不需要 API Key
 

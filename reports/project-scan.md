@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-階段 2 原型已完成第一版，測試報告位於 `reports/test-report.md`。階段 3 六章樣章初稿已建立，狀態位於 `reports/chapter-status.md`；下一步進行逐章 API 核對與教學深化。
+下一步進行逐章 API 核對與教學深化，並將 V2 Workspace 範例拆成可對應第 9～12 章的版本。
