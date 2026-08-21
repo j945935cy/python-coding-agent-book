@@ -6,12 +6,14 @@
 
 ## 工具協定
 
-每個工具提供 name、description 與 async execute：
+每個工具提供 `name`、`description` 與非同步 `execute()`。Registry 可以在建立時接收工具，也可以稍後註冊：
 
 ```python
-class ToolRegistry:
-    registry = ToolRegistry([CalculatorTool(), ReadTool(workspace)])
+registry = ToolRegistry([CalculatorTool()])
+registry.register(ReadTool(workspace))
 ```
+
+呼叫方向固定為 `Agent Loop → ToolRegistry → AgentTool`。Loop 不需要用一串 `if name == ...` 判斷具體類別；加入新工具時，只要註冊實例，不必修改核心控制流程。
 
 實際程式使用 `register()` 與 `execute()`，Registry 以工具名稱查找實例。重複名稱在註冊時立即失敗，避免模型看到的工具描述與實際執行對象不一致。
 
