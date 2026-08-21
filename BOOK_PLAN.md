@@ -8,6 +8,14 @@
 
 以可執行、可測試、可擴充的迷你 Python Coding Agent，帶讀者理解模型、Context、訊息、工具與 Agent Loop 的關係。Pi 是研究參考，不是本書的官方 Python 移植版。
 
+## 讀者下載資源
+
+成書後，讀者可由以下公開 GitHub Repository 取得完整範例程式、逐版本範例、測試與補充檔案：
+
+https://github.com/j945935cy/python-coding-agent-book
+
+書中連結應固定使用此 Repository 的穩定路徑；釋出版本則使用 Git tag 或 GitHub Release，避免讀者取得未驗證的開發中內容。
+
 ## 六篇十八章
 
 ### 第一篇：先看懂 Coding Agent

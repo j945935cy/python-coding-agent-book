@@ -4,6 +4,14 @@
 
 目前處於：階段 1「專案掃描與技術設計」。
 
+## 讀者下載資源
+
+成書後的完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
+
+https://github.com/j945935cy/python-coding-agent-book
+
+正式出版版本應優先使用該 Repository 的 Git tag 或 GitHub Release；`main` 分支保留為持續維護中的開發版本。
+
 ## 第一輪閱讀
 
 - `BOOK_PLAN.md`：全書定位、目錄與階段路線
