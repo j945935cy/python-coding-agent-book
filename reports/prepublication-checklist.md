@@ -32,23 +32,23 @@
 
 ## 3. EPUB 結構
 
-- [ ] 建立 EPUB 生產目錄與建置腳本。
-- [ ] 語言 metadata 設為 `zh-TW`。
-- [ ] 作者 metadata：`Happy eBook Authors`。
-- [ ] 出版者 metadata：`Happy eBook`。
-- [ ] 書名、識別碼、出版日期與版次已確認。
-- [ ] 導覽目錄與章節順序正確。
-- [ ] 封面至少 1400×2100，縮圖仍可辨識。
-- [ ] EPUB 內不依賴 JavaScript 執行 Mermaid。
+- [x] 建立 EPUB 生產目錄與建置腳本。
+- [x] 語言 metadata 設為 `zh-TW`。
+- [x] 作者 metadata：`Happy eBook Authors`。
+- [x] 出版者 metadata：`Happy eBook`。
+- [x] 書名、識別碼、出版日期與版次已確認。
+- [x] 導覽目錄與章節順序正確；導覽章名不含數字章號，正文保留章號。
+- [x] 封面為 1600×2400，縮圖標題可辨識。
+- [x] EPUB 內不依賴 JavaScript 執行 Mermaid。
 - [ ] 程式碼區塊在窄螢幕可閱讀，不發生水平內容遺失。
-- [ ] 表格使用細框；文字靠左、數值置中、表頭依欄位內容對齊。
+- [ ] 表格已有 EPUB CSS 細框與 padding；數值置中及各欄表頭對齊仍待閱讀器視覺確認。
 
 ## 4. 驗證與無障礙
 
-- [ ] EPUBCheck 0 errors。
+- [x] EPUBCheck 5.3.0：0 fatals、0 errors、0 warnings。
 - [ ] Ace by DAISY 無重大無障礙錯誤。
-- [ ] 所有內部連結、目錄與圖片資源存在。
-- [ ] 圖片包含 alt text；裝飾圖正確標記。
+- [x] EPUBCheck 與結構稽核確認內部連結、目錄與圖片資源存在。
+- [x] 正文 13 張 SVG 均有具體 alt text；封面已標記為 cover-image。
 - [ ] 使用至少兩種閱讀器測試手機與桌面版面。
 - [ ] Google Play Books 上傳預覽通過。
 

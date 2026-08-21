@@ -46,7 +46,9 @@ https://github.com/j945935cy/python-coding-agent-book
 - `reports/risk-register.md`：風險清單
 - `reports/development-order.md`：開發順序
 - `manuscript/appendices/exercise-solutions.md`：18 章、54 題練習解答與參考方向
+- `publishing/`：1600×2400 封面、EPUB CSS、metadata、建置與驗證來源
+- `dist/python-coding-agent-book.epub`：EPUB 3 發行草稿
 
 ## 目前限制
 
-目前已建立第一版可執行 Python 技術原型、42 項測試、18 章第一輪擴寫稿、54 題練習解答方向、13 張靜態 SVG 與完整 V0～V10 範例；尚未完成全書技術／文字編輯、真實模型 Adapter 或 EPUB 出版輸出。
+目前已建立第一版可執行 Python 技術原型、42 項測試、18 章第一輪擴寫稿、54 題練習解答方向、13 張靜態 SVG、1600×2400 封面與通過 EPUBCheck 的 EPUB 3 發行草稿；尚未完成全書技術／文字編輯、Ace、閱讀器實測、Google Play Books 預覽或真實模型 Adapter。

@@ -1,0 +1,27 @@
+{
+  "epub": "dist/python-coding-agent-book.epub",
+  "metadata": {
+    "title": [
+      "用 Python 自己寫一個 Coding Agent",
+      "從對話迴圈、工具呼叫到可擴充的 AI 程式助手"
+    ],
+    "publisher": [
+      "Happy eBook"
+    ],
+    "language": [
+      "zh-TW"
+    ],
+    "date": [
+      "2026-08-22"
+    ]
+  },
+  "cover_path": "EPUB/media/file13.jpg",
+  "cover_dimensions": [
+    1600,
+    2400
+  ],
+  "cover_format": "JPEG",
+  "entries": 49,
+  "opf_path": "EPUB/content.opf",
+  "errors": []
+}

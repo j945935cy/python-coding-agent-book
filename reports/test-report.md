@@ -112,3 +112,14 @@
 - 尚未加入完整事件串流 API；目前以事件收集器驗證工具開始／結束事件。
 - 工具參數 Schema 目前是基本型態檢查，尚未加入 Pydantic 選配層。
 - 尚未連接任何真實模型供應商。
+
+## EPUB 生產驗證
+
+- 封面 PNG／JPEG：1600×2400、RGB；標題、副標、作者 `Happy eBook Authors` 與出版者 `Happy eBook` 已視覺檢查。
+- EPUB 3：`dist/python-coding-agent-book.epub`，內含 18 章、六篇巢狀導覽、練習解答附錄與 13 張 SVG。
+- 導覽章名已移除數字章號，正文保留 `1. …` 至 `18. …` 章號。
+- metadata：書名、副標、作者、出版者、`zh-TW`、日期、版次與 UUID 已寫入生產資料；OPF 包含副標 title-type。
+- EPUB 結構稽核：mimetype 首項且未壓縮、OPF／nav 存在、唯一 cover-image、嵌入封面 1600×2400。
+- EPUBCheck 5.3.0：0 fatals、0 errors、0 warnings。
+- 可重現建置：連續執行兩次 `publishing/build_epub.py`，兩份 EPUB SHA-256 均為 `5b7b3ce0ee064bf30eefd361bb4551d26ed1943bff49fc5779062e552c769e67`。
+- Ace by DAISY 在目前 WSL／Chromium 執行環境處理 `nav.xhtml` 時失敗，尚未取得可用完整報告；不得誤報 Ace 通過。
