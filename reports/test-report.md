@@ -9,8 +9,9 @@
 
 ## 結果
 
-- pytest：18 passed
+- pytest：20 passed
 - compileall：passed
+- 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`
 - V3 Agent＋Workspace 範例執行：檔案已建立、修改並讀回。
@@ -38,6 +39,12 @@
 - 最大回合數防護
 - 合作式 `CancellationToken` 與 `AgentCancelled`
 - 工具事件在成功與失敗時都有收尾
+
+## 已完成工具
+
+- `src/mini_agent/chapter_audit.py`
+- `scripts/audit_chapters.py`
+- `tests/test_chapter_audit.py`
 
 ## 已知限制
 

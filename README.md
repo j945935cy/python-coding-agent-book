@@ -12,6 +12,7 @@ uv run python examples/v01_fake_model_loop.py
 uv run python examples/v02_workspace_tools.py
 uv run python examples/v03_agent_file_loop.py
 uv run python examples/v04_events_parallel_cancel.py
+uv run python scripts/audit_chapters.py .
 ```
 
 完整範例程式、測試、逐版本範例與補充檔案，統一發布於：
