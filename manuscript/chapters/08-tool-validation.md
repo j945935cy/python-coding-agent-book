@@ -16,7 +16,7 @@ validate_tool_call(call, tools.names())
 
 ## 錯誤應該回到模型
 
-Agent Loop 將工具執行例外包裝成 `ToolResultMessage(is_error=True)`，讓模型有機會修正下一步，而不是讓一次工具錯誤摧毀整個程序。這裡仍須搭配最大回合數，避免模型在錯誤上無限重試。
+Agent Loop 將工具執行例外包裝成 `ToolResultMessage(is_error=True)`，讓模型有機會修正下一步，而不是讓一次工具錯誤摧毀整個 Agent 執行流程。這裡仍須搭配最大回合數，避免模型在錯誤上無限重試。
 
 ## 練習
 

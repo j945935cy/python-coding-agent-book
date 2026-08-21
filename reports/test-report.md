@@ -9,8 +9,9 @@
 
 ## 結果
 
-- pytest：27 passed
+- pytest：29 passed
 - compileall：passed
+- 術語稽核：0 violations，符合繁體中文與台灣用語規範
 - API 參考稽核：核心公開 API 全部存在、無失效符號
 - 完整範例輸出稽核：V1～V4 全部 `ok`、returncode=0
 - Python 程式碼區塊稽核：14 blocks、0 syntax errors
@@ -57,6 +58,9 @@
 - `src/mini_agent/api_audit.py`
 - `scripts/audit_api_references.py`
 - `tests/test_api_audit.py`
+- `src/mini_agent/style_audit.py`
+- `scripts/audit_style.py`
+- `tests/test_style_audit.py`
 
 ## 已知限制
 

@@ -2,7 +2,7 @@
 
 ## 本章目標
 
-建立「可停止」的 Agent，而不是只能等待它完成或強制殺掉整個程序。
+建立「可停止」的 Agent，而不是只能等待它完成或強制殺掉整個 Agent 執行流程。
 
 ## 合作式取消
 
@@ -17,7 +17,7 @@ Agent Loop 在每回合與工具開始前檢查 Token。這是合作式取消：
 
 ## 錯誤不是一種
 
-工具輸入錯誤通常可以回傳 `ToolResultMessage(is_error=True)`，讓模型修正參數。使用者主動取消則應拋出 `AgentCancelled`，不應假裝成一般工具錯誤。逾時則必須中止子程序或 await，避免背景工作繼續修改 Workspace。
+工具輸入錯誤通常可以回傳 `ToolResultMessage(is_error=True)`，讓模型修正參數。使用者主動取消則應拋出 `AgentCancelled`，不應假裝成一般工具錯誤。逾時則必須中止子行程或 await，避免背景工作繼續修改 Workspace。
 
 ## 恢復的最小策略
 

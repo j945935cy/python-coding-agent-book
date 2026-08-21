@@ -11,7 +11,7 @@
 - 固定工作目錄為 Workspace
 - 只允許有限命令名稱
 - 拒絕 `;`、`&&`、管線、重新導向與反引號
-- 使用逾時中止程序
+- 使用逾時中止子行程
 - 回傳 return code、stdout、stderr
 
 ```python
