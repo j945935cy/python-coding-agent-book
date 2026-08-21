@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 _ALLOWED_COMMANDS = {"cat", "echo", "ls", "pwd", "python3", "sleep"}
-_SHELL_OPERATORS = re.compile(r"[;&|<>`]|\\x00")
+_SHELL_OPERATORS = re.compile(r"[;&|<>`]|\x00")
 
 
 class BashTool:

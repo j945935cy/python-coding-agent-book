@@ -11,16 +11,16 @@
 ## 結果
 
 - 單一驗證入口：8 checks 全部 `PASS`、`valid=True`
-- pytest：40 passed
+- pytest：42 passed
 - compileall：passed
 - 學習段落稽核：18 章都有非空「練習」與「本章驗收」
 - 術語稽核：0 violations，符合繁體中文與台灣用語規範
 - API 參考稽核：核心公開 API 全部存在、無失效符號
 - 完整範例輸出稽核：V0～V10 全部 `ok`、returncode=0
-- Python 程式碼區塊稽核：49 blocks、0 syntax errors
+- Python 程式碼區塊稽核：61 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
-- 書稿量化：18 個本章目標、18 個練習、18 個本章驗收；第 6～8 章新增 3 個本章小結
-- 章節 Markdown：共 1,893 行；第 6、7、8 章分別為 243、286、303 行
+- 書稿量化：18 個本章目標、18 個練習、18 個本章驗收、13 個本章小結
+- 章節 Markdown：共 2,991 行；第 9～18 章均完成第一輪擴寫
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`
 - V3 Agent＋Workspace 範例執行：檔案已建立、修改並讀回。
@@ -42,6 +42,18 @@
 - 從第 7 章 Markdown 擷取並執行 PingTool／Registry 範例：工具清單、`pong` 與 Calculator 42 均符合預期
 - `tool-contract-pipeline.svg`：XML 可解析、具 `viewBox`、`title`、`desc`、`role="img"`、`aria-labelledby`，且不含 script
 - SVG 點陣預覽的元件、箭頭與行距無重疊；目前 WSL 缺少中文字型，中文字形仍須在 EPUB／閱讀器環境複驗
+
+## 第 9～18 章擴寫批次驗證
+
+- 第 9～18 章均加入章節目標、核心流程、失敗分類、限制、檢查清單、分級練習、小結與驗收。
+- 新增 7 張 SVG；全書共 13 張，全部 XML 可解析，具 `viewBox`、`title`、`desc`、`role="img"` 與 `aria-labelledby`，且不含 script。
+- 7 張新 SVG 已實際轉成 PNG 接觸表檢查，框線、箭頭、英文文字、間距與裁切無重疊；WSL 缺少中文字型，中文字形仍待 EPUB／閱讀器複驗。
+- 第 9～12 章實作與測試命令對應 Read、Write、Edit、Bash 與 Workspace 邊界。
+- 第 13～16 章對應 Agent Loop、事件收尾、平行順序、取消、逾時與最大回合測試。
+- 第 17～18 章明確標示 Context、秘密、prompt injection、Bash 沙箱與真實 Adapter 尚未完成的限制。
+- 從 Markdown 精確擷取並執行第 9、10、11、12、13、15、18 章完整範例，全部 returncode=0；輸出分別涵蓋 Read、Write、Edit、Workspace `pwd`、兩回合 Loop、平行順序與 V10 完整整合。
+- 修正 V6 事件消費範例的 Calculator 參數，現在實際輸出 `tool_result=10 error=False`；新增回歸測試，避免腳本式最終回答掩蓋工具失敗。
+- 以 TDD 修正 Bash NUL 正規表示式：先證明實際 NUL 未被工具攔截，再修正 `_SHELL_OPERATORS` 並加入回歸測試。
 
 ## 已完成
 

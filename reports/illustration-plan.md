@@ -21,13 +21,13 @@
 | P0 | 3 | ToolCall／ToolResult 配對 | 解釋平行完成時為何必須使用 ID | 已完成：`manuscript/assets/message-pairing.svg` |
 | P1 | 4～5 | Context 生命週期與依賴注入 | 分辨狀態、設定、Hook 與物件依賴 | 已完成：`context-lifecycle.svg`、`dependency-injection.svg` |
 | P1 | 6～8 | 工具契約與驗證管線 | 從具體 Calculator 過渡到 Registry、Validation | 已完成：`manuscript/assets/tool-contract-pipeline.svg` |
-| P0 | 9～12 | Workspace 邊界與檔案狀態轉換 | 顯示 Read／Write／Edit／Bash 的副作用與路徑限制 | 待製作 |
-| P0 | 13 | Agent Loop 狀態機 | 呈現完成、工具、截斷、錯誤、最大回合分支 | 待製作 |
-| P1 | 14 | 事件生命週期時間軸 | 配對 start／end，解釋失敗仍須收尾 | 待製作 |
-| P1 | 15 | 循序與平行時間軸 | 分辨完成順序、回傳順序與資料相依 | 待製作 |
-| P0 | 16 | 取消與錯誤恢復狀態圖 | 區分取消、逾時、可恢復錯誤與終止 | 待製作 |
-| P0 | 17 | 三層安全防線與 Context 預算 | 顯示 Validation、Workspace、Safety Hook 的責任 | 待製作 |
-| P1 | 18 | V10 完整架構 | 收束 Model、Loop、Registry、Workspace、事件與政策 | 待製作 |
+| P0 | 9～12 | Workspace 邊界與檔案狀態轉換 | 顯示 Read／Write／Edit／Bash 的副作用與路徑限制 | 已完成：`workspace-boundary.svg` |
+| P0 | 13 | Agent Loop 狀態機 | 呈現完成、工具、截斷、錯誤、最大回合分支 | 已完成：`agent-loop-state.svg` |
+| P1 | 14 | 事件生命週期時間軸 | 配對 start／end，解釋失敗仍須收尾 | 已完成：`event-lifecycle.svg` |
+| P1 | 15 | 循序與平行時間軸 | 分辨完成順序、回傳順序與資料相依 | 已完成：`parallel-timeline.svg` |
+| P0 | 16 | 取消與錯誤恢復狀態圖 | 區分取消、逾時、可恢復錯誤與終止 | 已完成：`cancellation-recovery.svg` |
+| P0 | 17 | 三層安全防線與 Context 預算 | 顯示 Validation、Workspace、Safety Hook 的責任 | 已完成：`safety-layers-context.svg` |
+| P1 | 18 | V10 完整架構 | 收束 Model、Loop、Registry、Workspace、事件與政策 | 已完成：`complete-agent-architecture.svg` |
 
 ## 製作規格
 

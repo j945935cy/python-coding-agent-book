@@ -1,40 +1,40 @@
 # 章節進度
 
-18 個章節 Markdown 均已建立，並對應可執行原型與自動化驗收。第 1～8 章已完成第一輪出版篇幅擴寫；第 9～18 章仍是不同深度的教學初稿。
+18 個章節均已完成第一輪出版篇幅擴寫，並對應可執行原型、自動化驗收或明確的已知限制。這代表正文已從初稿骨架進入全書技術編輯階段；尚未代表文字編輯、練習解答或 EPUB 生產完成。
 
-| 章節 | 檔案 | 狀態 | 對應驗收 |
+| 章節 | 主題 | 狀態 | 主要驗收／圖解 |
 |---:|---|---|---|
-| 1 | `manuscript/chapters/01-chatbot-vs-agent.md` | 第一輪擴寫完成 | V0／V1、`agent-loop.svg` |
-| 2 | `manuscript/chapters/02-seven-modules.md` | 第一輪擴寫完成 | 七模組責任表、`seven-modules.svg` |
-| 3 | `manuscript/chapters/03-message-model.md` | 第一輪擴寫完成 | `tests/test_messages.py`、`message-pairing.svg` |
-| 4 | `manuscript/chapters/04-agent-context.md` | 第一輪擴寫完成 | `tests/test_messages.py`、`context-lifecycle.svg` |
-| 5 | `manuscript/chapters/05-config-hooks-injection.md` | 第一輪擴寫完成 | `tests/test_agent_controls.py`、`dependency-injection.svg` |
-| 6 | `manuscript/chapters/06-safe-calculator.md` | 第一輪擴寫完成 | Calculator 成功、未知操作、錯誤型態測試 |
-| 7 | `manuscript/chapters/07-tool-registry.md` | 第一輪擴寫完成 | 重複名稱、未知工具分派測試 |
-| 8 | `manuscript/chapters/08-tool-validation.md` | 第一輪擴寫完成 | ToolCall Validation、Safety Hook 執行順序測試、`tool-contract-pipeline.svg` |
-| 9 | `manuscript/chapters/09-read-tool.md` | 工具章初稿 | `tests/test_safety.py`、`tests/test_tools.py` |
-| 10 | `manuscript/chapters/10-write-tool.md` | 工具章初稿 | `tests/test_tools.py` |
-| 11 | `manuscript/chapters/11-edit-tool.md` | 工具章初稿；已局部補強 | `tests/test_tools.py` |
-| 12 | `manuscript/chapters/12-bash-tool.md` | 工具章初稿 | `tests/test_bash_tool.py` |
-| 13 | `manuscript/chapters/13-agent-loop.md` | 教學初稿；已局部補強 | `tests/test_agent_loop.py` |
-| 14 | `manuscript/chapters/14-events-and-streaming.md` | 教學初稿；已局部補強 | 事件收尾測試 |
-| 15 | `manuscript/chapters/15-parallel-tools.md` | 教學初稿；已局部補強 | 平行工具測試 |
-| 16 | `manuscript/chapters/16-cancellation-errors-recovery.md` | 教學初稿 | 取消與逾時測試 |
-| 17 | `manuscript/chapters/17-safety-context.md` | 教學初稿；已局部補強 | `tests/test_safety.py`、`tests/test_cancellation.py` |
-| 18 | `manuscript/chapters/18-mini-coding-agent.md` | 教學初稿；已局部補強 | 全套原型測試 |
+| 1 | 聊天機器人與 Agent | 第一輪擴寫完成 | V0／V1、`agent-loop.svg` |
+| 2 | 七個 Agent 模組 | 第一輪擴寫完成 | `seven-modules.svg` |
+| 3 | 訊息資料模型 | 第一輪擴寫完成 | `tests/test_messages.py`、`message-pairing.svg` |
+| 4 | Agent Context | 第一輪擴寫完成 | `context-lifecycle.svg` |
+| 5 | Config、Hook、依賴注入 | 第一輪擴寫完成 | `dependency-injection.svg` |
+| 6 | 安全 Calculator | 第一輪擴寫完成 | Calculator 負向測試 |
+| 7 | AgentTool 與 Registry | 第一輪擴寫完成 | Registry 邊界測試 |
+| 8 | ToolCall Validation | 第一輪擴寫完成 | `tool-contract-pipeline.svg` |
+| 9 | Read Tool | 第一輪擴寫完成 | Workspace 測試、`workspace-boundary.svg` |
+| 10 | Write Tool | 第一輪擴寫完成 | Write → Read 驗證 |
+| 11 | Edit Tool | 第一輪擴寫完成 | 唯一匹配與狀態轉換 |
+| 12 | Bash Tool | 第一輪擴寫完成 | `tests/test_bash_tool.py` |
+| 13 | Agent Loop | 第一輪擴寫完成 | `agent-loop-state.svg` |
+| 14 | 事件與串流 | 第一輪擴寫完成 | `event-lifecycle.svg` |
+| 15 | 平行工具 | 第一輪擴寫完成 | `parallel-timeline.svg` |
+| 16 | 取消、錯誤與恢復 | 第一輪擴寫完成 | `cancellation-recovery.svg` |
+| 17 | 安全政策與 Context | 第一輪擴寫完成 | `safety-layers-context.svg` |
+| 18 | 完整 Mini Coding Agent | 第一輪擴寫完成 | V10、`complete-agent-architecture.svg` |
 
-## 本批完成：第 6～8 章
+## 第 9～18 章本批成果
 
-- 第 6 章補齊安全 Calculator 完整實作、可執行成功案例、未知操作、數值型態錯誤、布林值限制說明、檢查清單與分級練習。
-- 第 7 章補齊 `AgentTool` Protocol、結構式子型別、註冊與分派、空名稱、重複名稱、未知工具，以及可執行 PingTool 範例。
-- 第 8 章補齊 `Validation → Safety Hook → Registry → Tool → ToolResultMessage` 管線、錯誤分類、取消邊界與驗證命令。
-- 新增 `manuscript/assets/tool-contract-pipeline.svg`，含替代文字、文字摘要與 EPUB 可存取性標記。
-- 新增或補強 Calculator 型態、Registry 邊界、空 call ID 與 Safety Hook 執行順序測試。
+- 第 9～12 章補齊 Workspace 邊界、Read／Write／Edit／Bash 完整實作、失敗分類、安全限制、檢查清單與分級練習。
+- 第 13～16 章補齊 Agent Loop 停止條件、事件生命週期、平行結果契約、取消／逾時／恢復邊界。
+- 第 17 章補齊安全分層、權限決策、Context 預算、秘密與提示注入限制。
+- 第 18 章補齊 V10 完整組裝、V0～V10 能力矩陣、真實 Model Adapter 邊界與上線前差距。
+- 新增 7 張靜態 SVG；全書現有 13 張 SVG。
 
-## 下一輪：第 9～12 章
+## 下一階段
 
-1. 擴寫 Workspace 邊界與路徑解析的共同基礎。
-2. 補齊 Read、Write、Edit、Bash 的完整可複製程式與失敗案例。
-3. 明確區分讀取、覆寫、精確替換與受限命令的副作用。
-4. 製作 Workspace 邊界與檔案狀態轉換 SVG。
-5. 每章加入檢查清單、三題分級練習、驗收條件與實際測試命令。
+1. 為練習題加入解答方向與參考實作。
+2. 執行全書第一輪技術編輯，統一重複警告、術語與章節銜接。
+3. 執行第二輪文字編輯與反 AI 腔檢查。
+4. 建立 EPUB 生產目錄、metadata、封面與建置腳本。
+5. 執行 EPUBCheck、Ace by DAISY、閱讀器與 Google Play Books 預覽。

@@ -18,16 +18,18 @@ def render(event: AgentEvent) -> str:
 async def main() -> None:
     events: list[AgentEvent] = []
     model = FakeModel([
-        AssistantMessage("", [ToolCall("call-1", "calculator", {"operation": "add", "a": 4, "b": 6})]),
+        AssistantMessage("", [ToolCall("call-1", "calculator", {"operation": "add", "left": 4, "right": 6})]),
         AssistantMessage("事件已完整收尾。"),
     ])
-    await run_agent_loop(
+    history = await run_agent_loop(
         model,
         AgentContext([UserMessage("計算並顯示狀態")]),
         ToolRegistry([CalculatorTool()]),
         AgentConfig(),
         events=events,
     )
+    tool_result = history[-2]
+    print(f"tool_result={tool_result.content['result']} error={tool_result.is_error}")
     print("events=" + ",".join(render(event) for event in events))
 
 

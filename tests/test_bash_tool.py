@@ -20,6 +20,12 @@ async def test_bash_rejects_shell_composition(tmp_path: Path):
 
 
 @pytest.mark.asyncio
+async def test_bash_rejects_actual_nul_before_starting_process(tmp_path: Path):
+    with pytest.raises(PermissionError, match="Shell composition"):
+        await BashTool(tmp_path).execute("1", {"command": "echo before\x00after"})
+
+
+@pytest.mark.asyncio
 async def test_bash_times_out(tmp_path: Path):
     with pytest.raises(TimeoutError):
         await BashTool(tmp_path, timeout_seconds=0.01).execute("1", {"command": "sleep 1"})
