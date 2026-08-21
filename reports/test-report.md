@@ -9,8 +9,10 @@
 
 ## 結果
 
-- pytest：16 passed
+- pytest：18 passed
 - compileall：passed
+- 範例執行：`計算結果是 5。`
+- 六章樣章引用檢查：6 chapters checked; missing=[]
 - 核心測試不需要 API Key
 
 ## 已完成
@@ -31,11 +33,12 @@
 - Read、Write、Edit 工具
 - Bash 限制模式、命令限制、Workspace、逾時
 - 最大回合數防護
+- 合作式 `CancellationToken` 與 `AgentCancelled`
+- 工具事件在成功與失敗時都有收尾
 
 ## 已知限制
 
 - 尚未加入完整事件串流 API；目前以事件收集器驗證工具開始／結束事件。
-- 尚未加入正式取消 API；Bash 目前支援逾時，中止控制留待下一批。
 - 工具參數 Schema 目前是基本型態檢查，尚未加入 Pydantic 選配層。
 - 尚未建立完整 V0～V10 範例。
 - 尚未連接任何真實模型供應商。

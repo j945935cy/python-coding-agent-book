@@ -5,6 +5,7 @@ import inspect
 from collections.abc import Awaitable, Callable
 from typing import Any
 
+from .cancellation import CancellationToken
 from .config import AgentConfig
 from .context import AgentContext
 from .events import AgentEvent
@@ -24,9 +25,12 @@ async def run_agent_loop(
     *,
     before_tool_call: Hook | None = None,
     events: list[AgentEvent] | None = None,
+    cancellation: CancellationToken | None = None,
 ) -> list:
     history = context.messages
     for turn in range(config.max_turns):
+        if cancellation:
+            cancellation.raise_if_cancelled()
         assistant = await model.complete(context)
         history.append(assistant)
         if assistant.stop_reason == "length" and assistant.tool_calls:
@@ -45,6 +49,8 @@ async def run_agent_loop(
                         allowed = await allowed
                     if not allowed:
                         raise PermissionError("Tool call blocked by safety hook")
+                if cancellation:
+                    cancellation.raise_if_cancelled()
                 if events is not None:
                     events.append(AgentEvent("tool_start", {"id": call.id, "name": call.name}))
                 result = await asyncio.wait_for(
