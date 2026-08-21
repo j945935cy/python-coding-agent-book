@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 行動閉環</title>
+  <desc id="desc">使用者需求經模型決策、驗證與權限、工具執行、工具結果回到 Context，直到完成或安全停止。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <rect width="900" height="430" fill="#ffffff"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g fill="#e0f2fe" stroke="#0284c7" stroke-width="2"><rect x="40" y="160" width="140" height="70" rx="10"/><rect x="230" y="55" width="150" height="70" rx="10"/><rect x="455" y="55" width="170" height="70" rx="10"/><rect x="680" y="160" width="150" height="70" rx="10"/><rect x="455" y="300" width="170" height="70" rx="10"/><rect x="230" y="300" width="150" height="70" rx="10"/></g>
+    <g font-size="18" fill="#0f172a"><text x="110" y="202">使用者需求</text><text x="305" y="97">模型決策</text><text x="540" y="88">驗證與權限</text><text x="540" y="110" font-size="14">Validation / Safety</text><text x="755" y="202">工具執行</text><text x="540" y="342">工具結果</text><text x="305" y="342">AgentContext</text></g>
+    <g stroke="#334155" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M180 175 C205 130 215 110 230 100"/><path d="M380 90 L455 90"/><path d="M625 105 C650 120 670 155 680 175"/><path d="M755 230 C735 285 680 325 625 335"/><path d="M455 335 L380 335"/><path d="M280 300 C245 250 245 160 280 125"/></g>
+    <path d="M625 75 C710 45 815 65 840 135" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+    <text x="765" y="58" font-size="14" fill="#991b1b">拒絕、取消、逾時</text>
+    <text x="820" y="150" font-size="14" fill="#991b1b">安全停止</text>
+  </g>
+</svg>

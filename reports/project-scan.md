@@ -59,4 +59,4 @@
 
 ## 建議下一批
 
-下一步進入出版前稽核與全書內容編輯。單一驗證入口 `scripts/verify_all.py`、V0～V10 能力對照 `reports/version-matrix.md` 與出版前清單 `reports/prepublication-checklist.md` 已建立；下一批依清單擴寫正文與規劃圖解。
+下一步進入出版前稽核與全書內容編輯。單一驗證入口、版本對照與出版前清單已建立；第 1～3 章完成第一輪擴寫，並新增 3 張 EPUB 可用 SVG。全書圖解規劃位於 `reports/illustration-plan.md`，下一批擴寫第 4～5 章並製作 Context／依賴注入圖解。

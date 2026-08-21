@@ -16,7 +16,7 @@
 - 術語稽核：0 violations，符合繁體中文與台灣用語規範
 - API 參考稽核：核心公開 API 全部存在、無失效符號
 - 完整範例輸出稽核：V0～V10 全部 `ok`、returncode=0
-- Python 程式碼區塊稽核：18 blocks、0 syntax errors
+- Python 程式碼區塊稽核：21 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`

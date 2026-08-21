@@ -4,9 +4,9 @@
 
 | 章節 | 檔案 | 狀態 | 對應驗收 |
 |---|---|---|---|
-| 1 | `manuscript/chapters/01-chatbot-vs-agent.md` | 主要樣章初稿 | V1 FakeModel Loop |
-| 2 | `manuscript/chapters/02-seven-modules.md` | 完整目錄章初稿 | 架構圖與模組驗收 |
-| 3 | `manuscript/chapters/03-message-model.md` | 初稿 | `tests/test_messages.py` |
+| 1 | `manuscript/chapters/01-chatbot-vs-agent.md` | 第一輪擴寫完成 | V0／V1、`manuscript/assets/agent-loop.svg` |
+| 2 | `manuscript/chapters/02-seven-modules.md` | 第一輪擴寫完成 | 七模組責任表、`manuscript/assets/seven-modules.svg` |
+| 3 | `manuscript/chapters/03-message-model.md` | 第一輪擴寫完成 | `tests/test_messages.py`、`manuscript/assets/message-pairing.svg` |
 | 4 | `manuscript/chapters/04-agent-context.md` | 完整目錄章初稿 | `tests/test_messages.py` |
 | 5 | `manuscript/chapters/05-config-hooks-injection.md` | 完整目錄章初稿 | `tests/test_agent_controls.py` |
 | 6 | `manuscript/chapters/06-safe-calculator.md` | 初稿 | `tests/test_calculator.py` |

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 七模組資料流</title><desc id="desc">Context 呼叫 ModelClient，AssistantMessage 經 Validation 和 Safety，由 Registry 分派 Tool，結果回到 Context；Agent Loop 協調整體流程。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3z" fill="#334155"/></marker></defs>
+  <rect width="960" height="500" fill="#fff"/>
+  <rect x="25" y="25" width="910" height="390" rx="16" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="45" y="55" font-family="sans-serif" font-size="18" fill="#334155">Agent Loop：協調回合、停止、事件與結果回填</text>
+  <g font-family="sans-serif" text-anchor="middle" fill="#0f172a">
+    <g stroke-width="2"><rect x="55" y="150" width="140" height="75" rx="9" fill="#ede9fe" stroke="#7c3aed"/><rect x="245" y="70" width="150" height="75" rx="9" fill="#e0f2fe" stroke="#0284c7"/><rect x="445" y="70" width="150" height="75" rx="9" fill="#e0f2fe" stroke="#0284c7"/><rect x="645" y="70" width="150" height="75" rx="9" fill="#fee2e2" stroke="#dc2626"/><rect x="755" y="250" width="145" height="75" rx="9" fill="#dcfce7" stroke="#16a34a"/><rect x="535" y="250" width="145" height="75" rx="9" fill="#dcfce7" stroke="#16a34a"/><rect x="300" y="250" width="160" height="75" rx="9" fill="#ffedd5" stroke="#ea580c"/></g>
+    <g font-size="17"><text x="125" y="185">AgentContext</text><text x="320" y="105">ModelClient</text><text x="520" y="105">Validation</text><text x="720" y="105">Safety</text><text x="827" y="285">Registry</text><text x="607" y="285">Tool</text><text x="380" y="285">Message</text></g>
+    <g font-size="13" fill="#475569"><text x="125" y="205">保存訊息順序</text><text x="320" y="125">產生下一步</text><text x="520" y="125">格式與名稱</text><text x="720" y="125">路徑與權限</text><text x="827" y="305">查找與分派</text><text x="607" y="305">有限能力</text><text x="380" y="305">呼叫與結果</text></g>
+  </g>
+  <g fill="none" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"><path d="M195 165 L260 140"/><path d="M395 108 L445 108"/><path d="M595 108 L645 108"/><path d="M760 145 C805 175 825 210 825 250"/><path d="M755 288 L680 288"/><path d="M535 288 L460 288"/><path d="M300 288 C220 280 160 250 140 225"/></g>
+  <rect x="300" y="435" width="360" height="42" rx="8" fill="#f1f5f9" stroke="#64748b"/><text x="480" y="462" font-family="sans-serif" font-size="15" text-anchor="middle" fill="#334155">Config／Cancellation 限制整體流程</text>
+</svg>
