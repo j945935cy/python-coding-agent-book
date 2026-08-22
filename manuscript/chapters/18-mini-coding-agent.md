@@ -108,6 +108,21 @@ events=6
 
 V10 是 FakeModel 驅動的確定性 Workspace 整合例，不是互動式產品。它只註冊 Write、Edit、Read；沒有註冊 Calculator 或 Bash，沒有使用平行模式，也沒有實際觸發 timeout、取消、Context 壓縮或真實網路模型。範例傳入 Config、Hook、事件與 Token，代表組裝邊界存在，不代表每條控制路徑都已在 V10 展示。
 
+## 從限制清單到可執行原型
+
+本書另提供 `manuscript/appendices/advanced-production-examples.md`，將八項產品化缺口拆成可執行範例：
+
+- 無金鑰 Recording Adapter；
+- 可注入 input／output 的互動式 CLI；
+- 完整 Registry 與獨立授權政策；
+- 不經 shell 的 structured-command runner；
+- Condition＋deque 有界事件串流原型；
+- Context 測量與壓縮純函式；
+- SQLite checkpoint 與冪等 replay；
+- staging Workspace 多檔交易與回滾。
+
+這些範例位於 `examples/advanced/`，並由四個進階測試檔驗收：Adapter／CLI、Registry／Runner、Stream／Context、Checkpoint／Transaction。它們沒有被直接塞進 V10，也沒有改變穩定核心 API；讀者可先理解每個邊界，再決定是否整合。
+
 ## 從 V0 到 V10
 
 | 版本 | 新增能力 | 主要驗收 |

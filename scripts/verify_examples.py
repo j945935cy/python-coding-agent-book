@@ -18,6 +18,14 @@ SPECS = [
     ExampleSpec("examples/v08_cooperative_cancel.py", "cancelled=operator stop"),
     ExampleSpec("examples/v09_safety_policy.py", "denied=True"),
     ExampleSpec("examples/v10_complete_agent.py", "完整 Agent 已完成。"),
+    ExampleSpec("examples/advanced/recording_adapter.py", "requests=1"),
+    ExampleSpec("examples/advanced/interactive_cli.py", "you> Bye."),
+    ExampleSpec("examples/advanced/full_registry.py", "bash=deny"),
+    ExampleSpec("examples/advanced/sandbox_runner.py", "structured argv"),
+    ExampleSpec("examples/advanced/event_stream.py", "closed=True"),
+    ExampleSpec("examples/advanced/context_budget.py", "latest_user_kept=True"),
+    ExampleSpec("examples/advanced/checkpoint_sqlite.py", "result=checkpointed"),
+    ExampleSpec("examples/advanced/multi_file_transaction.py", "committed=true"),
 ]
 
 

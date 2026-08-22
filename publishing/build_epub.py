@@ -9,8 +9,6 @@ import zipfile
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from PIL import Image
-
 ROOT = Path(__file__).resolve().parents[1]
 WORK = Path(__file__).resolve().parent
 TITLE = "用 Python 自己寫一個 Coding Agent"
@@ -31,6 +29,49 @@ PARTS = [
     ("第五篇　完成 Agent Loop", [13, 14, 15, 16]),
     ("第六篇　從範例走向可用系統", [17, 18]),
 ]
+
+
+def image_dimensions(data: bytes) -> tuple[int, int]:
+    """Read PNG/JPEG dimensions with the standard library only."""
+    if data.startswith(b"\x89PNG\r\n\x1a\n") and len(data) >= 24:
+        width = int.from_bytes(data[16:20], "big")
+        height = int.from_bytes(data[20:24], "big")
+        if width > 0 and height > 0:
+            return width, height
+
+    if data.startswith(b"\xff\xd8"):
+        sof_markers = {
+            0xC0, 0xC1, 0xC2, 0xC3,
+            0xC5, 0xC6, 0xC7,
+            0xC9, 0xCA, 0xCB,
+            0xCD, 0xCE, 0xCF,
+        }
+        index = 2
+        while index < len(data):
+            if data[index] != 0xFF:
+                index += 1
+                continue
+            while index < len(data) and data[index] == 0xFF:
+                index += 1
+            if index >= len(data):
+                break
+            marker = data[index]
+            index += 1
+            if marker in {0xD8, 0xD9}:
+                continue
+            if index + 2 > len(data):
+                break
+            segment_length = int.from_bytes(data[index:index + 2], "big")
+            if segment_length < 2 or index + segment_length > len(data):
+                break
+            if marker in sof_markers and segment_length >= 7:
+                height = int.from_bytes(data[index + 3:index + 5], "big")
+                width = int.from_bytes(data[index + 5:index + 7], "big")
+                if width > 0 and height > 0:
+                    return width, height
+            index += segment_length
+
+    raise ValueError("Unsupported or invalid image data")
 
 
 def identifier() -> str:
@@ -75,9 +116,13 @@ def build_combined_markdown() -> Path:
                 raise RuntimeError(f"Unexpected chapter heading: {chapter_path(number)}")
             chunks.append(shift_markdown_headings(text) + "\n")
 
-    appendix = (ROOT / "manuscript/appendices/exercise-solutions.md").read_text(encoding="utf-8")
     chunks.append("# 附錄\n")
-    chunks.append(shift_markdown_headings(appendix) + "\n")
+    for appendix_name in [
+        "exercise-solutions.md",
+        "advanced-production-examples.md",
+    ]:
+        appendix = (ROOT / "manuscript/appendices" / appendix_name).read_text(encoding="utf-8")
+        chunks.append(shift_markdown_headings(appendix) + "\n")
 
     build_dir = ROOT / ".hermes-work/publishing"
     build_dir.mkdir(parents=True, exist_ok=True)
@@ -199,11 +244,7 @@ def validate_epub(epub_path: Path) -> dict:
         ]
         assert len(cover_items) == 1
         cover_rel = (opf_dir / cover_items[0].attrib["href"]).as_posix()
-        with tempfile.TemporaryDirectory() as directory:
-            cover_path = Path(directory) / Path(cover_rel).name
-            cover_path.write_bytes(zf.read(cover_rel))
-            with Image.open(cover_path) as image:
-                cover_size = image.size
+        cover_size = image_dimensions(zf.read(cover_rel))
         assert cover_size == (1600, 2400)
         nav_items = [
             item for item in opf.findall(".//opf:manifest/opf:item", ns)

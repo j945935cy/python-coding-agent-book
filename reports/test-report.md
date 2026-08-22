@@ -11,16 +11,16 @@
 ## 結果
 
 - 單一驗證入口：8 checks 全部 `PASS`、`valid=True`
-- pytest：42 passed
+- pytest：100 passed
 - compileall：passed
 - 學習段落稽核：18 章都有非空「練習」與「本章驗收」
 - 術語稽核：0 violations，符合繁體中文與台灣用語規範
 - API 參考稽核：核心公開 API 全部存在、無失效符號
-- 完整範例輸出稽核：V0～V10 全部 `ok`、returncode=0
+- 完整範例輸出稽核：V0～V10 與八個進階原型共 19 個範例全部 `ok`、returncode=0
 - Python 程式碼區塊稽核：61 blocks、0 syntax errors
 - 章節稽核：18 章、編號 1～18 完整、無重複、無缺號、無失效引用
 - 書稿量化：18 個本章目標、18 個練習、18 個本章驗收、13 個本章小結
-- 章節 Markdown：共 2,991 行；第 9～18 章均完成第一輪擴寫
+- 章節 Markdown：共 3,006 行；第 9～18 章均完成第一輪擴寫
 - 範例執行：`計算結果是 5。`
 - V2 Workspace 範例執行：`print('hello, agent')`
 - V3 Agent＋Workspace 範例執行：檔案已建立、修改並讀回。
@@ -121,5 +121,15 @@
 - metadata：書名、副標、作者、出版者、`zh-TW`、日期、版次與 UUID 已寫入生產資料；OPF 包含副標 title-type。
 - EPUB 結構稽核：mimetype 首項且未壓縮、OPF／nav 存在、唯一 cover-image、嵌入封面 1600×2400。
 - EPUBCheck 5.3.0：0 fatals、0 errors、0 warnings。
-- 可重現建置：連續執行兩次 `publishing/build_epub.py`，兩份 EPUB SHA-256 均為 `5b7b3ce0ee064bf30eefd361bb4551d26ed1943bff49fc5779062e552c769e67`。
+- 可重現建置：連續執行兩次 `publishing/build_epub.py`，兩份 EPUB SHA-256 均為 `9c21538196efce712cdbec795b2f94059af92d6d647c43da7c815a0b8b5b9561`。
 - Ace by DAISY 在目前 WSL／Chromium 執行環境處理 `nav.xhtml` 時失敗，尚未取得可用完整報告；不得誤報 Ace 通過。
+- `publishing/build_epub.py` 與可重現性檢查不依賴 Pillow；乾淨 `.venv/bin/python` 已連續建置成功。Pillow 只用於封面合成。
+
+## 進階產品化範例
+
+- `manuscript/appendices/advanced-production-examples.md` 共 358 行，已納入 EPUB 附錄導覽。
+- 四組進階測試共 56 項，另有 2 項無 Pillow EPUB 圖片尺寸測試；全套 pytest 為 100 passed。
+- Adapter 會拒絕同一 provider 回應內的重複 ToolCall ID；EventStream 以單一 Condition 原子化 publish／close／abort，取消 blocked publisher、取消 blocked close 或交錯 abort 都不會讓 closed stream 卡住或殘留事件。
+- 八個進階 main 均實際執行，輸出符合 `scripts/verify_examples.py` manifest。
+- 範例涵蓋無金鑰 Adapter、CLI、Registry 授權、structured runner、Condition＋deque event stream、Context 壓縮、SQLite checkpoint 與多檔交易。
+- 限制仍明確：無真實 Provider 網路、無 OS sandbox、無核心 token streaming、無所有 crash window exactly-once、無分散式交易。

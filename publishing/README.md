@@ -23,14 +23,14 @@
 
 ```bash
 uv run --with pillow python publishing/cover/build_cover.py
-uv run --with pillow python publishing/build_epub.py
-uv run --with pillow python publishing/check_reproducible_build.py
+uv run python publishing/build_epub.py
+uv run python publishing/check_reproducible_build.py
 ```
 
 建置腳本會：
 
 1. 依六篇十八章順序組裝 Markdown；
-2. 加入練習解答附錄；
+2. 加入練習解答與進階產品化範例兩份附錄；
 3. 將篇名與章名建立為巢狀導覽；
 4. 保留正文 `1. …` 章號，但從 EPUB 導覽標籤移除章號；
 5. 嵌入 1600×2400 JPEG 封面；
@@ -38,6 +38,7 @@ uv run --with pillow python publishing/check_reproducible_build.py
 7. 確認 mimetype、OPF、cover-image、nav 與封面尺寸。
 
 建置會固定 OPF `dcterms:modified` 與所有 ZIP entry timestamp／權限。`check_reproducible_build.py` 連續建置兩次並要求 SHA-256 完全相同。
+EPUB 建置與可重現性檢查只使用 Python 標準函式庫；Pillow 僅用於重新產生封面。PNG／JPEG 尺寸由建置腳本直接解析檔頭。
 
 ## EPUBCheck
 

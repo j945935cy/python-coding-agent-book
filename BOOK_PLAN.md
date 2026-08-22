@@ -57,6 +57,7 @@ https://github.com/j945935cy/python-coding-agent-book
 ### 附錄
 
 - 練習解答與參考方向：`manuscript/appendices/exercise-solutions.md`
+- 進階產品化範例：`manuscript/appendices/advanced-production-examples.md`
 
 ## 階段路線
 
